@@ -1,0 +1,35 @@
+
+get method use for fetch data from url or query string and it is a default method
+
+$.ajax({
+    url: "demo.php?ajaxid=4&UserID=" + UserID + "&EmailAddress=" + encodeURIComponent(EmailAddress),
+    success: function(response) {
+        //Do Something
+    },
+    error: function(xhr) {
+        //Do Something to handle error
+    }
+});
+
+---php file class using jquery ajax)
+$.ajax({
+  url: "demo.php",
+  type: "get", //send it through get method
+  dataType: 'json',
+  data: { 
+    UserID: UserID, 
+    EmailAddress: EmailAddress
+  },
+  success: function(response) {
+    //Do Something
+  },
+  error: function(xhr) {
+    //Do Something to handle error
+  }
+});
+
+get data by
+ $_GET['ajaxid'] //gives 4
+ $_GET['UserID'] //gives you the sent userid
+ 
+ 
